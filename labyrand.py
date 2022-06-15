@@ -16,7 +16,7 @@ def create_player():
 def laby_move(pen, distance, penUp=False):
 	if penUp:
 		pen.up()
-	for i in range(int(distance/SPEED)):
+	for _ in range(int(distance/SPEED)):
 		pen.forward(SPEED)
 		if not penUp: labyrinth_cords.append(pen.position())
 	pen.down()
@@ -24,7 +24,7 @@ def laby_move(pen, distance, penUp=False):
 def laby_go(pen, distance, direction, across=False):
 	directions = {"up": 90, "left": 180, "down": -90, "right": 0}
 	pen.seth(directions[direction])
-	for i in range(int(distance/50)):
+	for _ in range(int(distance/50)):
 		skip = False
 		pos = [pen.pos()[0],pen.pos()[1]]
 		if random.randint(0,5) == 5:
